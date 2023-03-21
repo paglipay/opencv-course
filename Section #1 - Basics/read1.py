@@ -11,7 +11,7 @@ import cv2 as cv
 # capture = cv.VideoCapture('./Resources/Videos/dog.mp4')
 # capture = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
 capture = cv.VideoCapture(0)
-haar_cascade = cv.CascadeClassifier('./haar_face.xml')
+haar_cascade = cv.cuda_CascadeClassifier('./haar_face.xml')
 while True:
     isTrue, frame = capture.read()
     
@@ -27,11 +27,12 @@ while True:
 
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         # cv.imshow('Gray People', gray)
+        cuFrame = cv.cuda_GpuMat(gray)
 
-
-        faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=1)
+        faces_rect = haar_cascade.detectMultiScale(cuFrame)
 
         print(f'Number of faces found = {len(faces_rect)}')
+
 
         for (x,y,w,h) in faces_rect:
             cv.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), thickness=2)
