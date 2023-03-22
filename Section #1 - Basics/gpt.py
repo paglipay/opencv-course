@@ -6,26 +6,26 @@ import numpy as np
 cv.cuda.setDevice(0)
 cuda = cv.cuda
 
-capture = cv.VideoCapture('./dog.mp4')
+capture = cv.VideoCapture(0)
 
 # Load the Haar cascade classifier for face detection
-haar_cascade = cv.cuda_CascadeClassifier('./haar_face.xml')
+# haar_cascade = cv.cuda_CascadeClassifier('./haar_face.xml')
 # haar_cascade = cv.cuda.CascadeClassifier_create('./haar_face.xml')
 
 while True:
     isTrue, frame = capture.read()
     if isTrue:
         # Convert the input frame to grayscale
-        gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        # gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 
-        # Create CUDA matrices for input and output
-        gray_gpu = cuda_GpuMat = cv.cuda_GpuMat(gray)
-        # gray_gpu = cv.cuda_GpuMat(gray)
-        faces_rect_gpu = cv.cuda_GpuMat()
+        # # Create CUDA matrices for input and output
+        # gray_gpu = cuda_GpuMat = cv.cuda_GpuMat(gray)
+        # # gray_gpu = cv.cuda_GpuMat(gray)
+        # faces_rect_gpu = cv.cuda_GpuMat()
 
-        # Perform face detection using CUDA
-        # faces_rect_gpu = haar_cascade.detectMultiScale(gray_gpu, scaleFactor=1.1, minNeighbors=1)
-        faces_rect_gpu = haar_cascade.detectMultiScale(gray_gpu)
+        # # Perform face detection using CUDA
+        # # faces_rect_gpu = haar_cascade.detectMultiScale(gray_gpu, scaleFactor=1.1, minNeighbors=1)
+        # faces_rect_gpu = haar_cascade.detectMultiScale(gray_gpu, faces_rect_gpu)
 
         # Download the output from GPU to CPU memory
         # faces_rect = faces_rect_gpu.download()
