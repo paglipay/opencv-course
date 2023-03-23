@@ -44,8 +44,10 @@ while vod.isReady():
 
     # Download the output from GPU to CPU memory
     # faces_rect = faces_rect_gpu.download()
-    result = haar_cascade.detectMultiScale(gray_gpu).download() 
+    result = haar_cascade.detectMultiScale(gray_gpu).download()
     if result is not None:
+         
+        print(f'Number of faces found = {len(result[0])}')
         for (x,y,w,h) in result[0]:
             cv.rectangle(frame, (x,y), (x+w,y+h), (0,255,0), thickness=2)
 
