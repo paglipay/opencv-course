@@ -1,11 +1,12 @@
 import cv2 as cv
-import nanocamera as nano
+# import nanocamera as nano
 
 # cam_pipeline_str = 'nvarguscamerasrc sensor-id=0 ! video/x-raw(memory:NVMM),format=NV12,width=1280,height=720,framerate=30/1 ! nvvidconv ! video/x-raw,format=BGRx ! videoconvert ! video/x-raw,format=BGR ! appsink drop=1'
 # vod = cv.VideoCapture(cam_pipeline_str, cv.CAP_GSTREAMER)
 # vod = cv.VideoCapture('../Resources/Videos/dog.mp4')
 # Create the Camera instance for No rotation (flip=0) with size of 640 by 480
-vod = nano.Camera(camera_type=1, device_id=0, width=640, height=480, fps=30)
+# vod = nano.Camera(camera_type=1, device_id=0, width=640, height=480, fps=30)
+vod = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
 
 # ret, frame = vod.read()
 
