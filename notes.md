@@ -99,6 +99,9 @@ nvgstcapture-1.0 --orientation=2       # for testing CSI camera
 # V4L2 USB camera 
 nvgstcapture-1.0 --camsrc=0 --cap-dev-node=1
 
+sudo pip3 install --upgrade pip
+sudo pip3 install python3-opencv==4.5.1.48
+
 sudo apt install libpython3.7-dev
 
 wget http://dlib.net/files/dlib-19.23.tar.bz2
