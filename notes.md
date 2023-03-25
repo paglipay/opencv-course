@@ -104,7 +104,8 @@ git config --global user.email "paglipay@gmail.com"
 sudo pip3 install adafruit-circuitpython-servokit
 
 sudo pip3 install --upgrade pip
-sudo pip3 install python3-opencv==4.5.1.48
+sudo pip3 install opencv-python==4.5.1.48
+sudo pip3 install --upgrade opencv-python
 
 sudo apt install libpython3.7-dev
 
