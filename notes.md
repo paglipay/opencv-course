@@ -99,6 +99,8 @@ nvgstcapture-1.0 --orientation=2       # for testing CSI camera
 # V4L2 USB camera 
 nvgstcapture-1.0 --camsrc=0 --cap-dev-node=1
 
+
+github nano build 4.5.1
 sudo pip3 install --upgrade pip
 sudo pip3 install python3-opencv==4.5.1.48
 
