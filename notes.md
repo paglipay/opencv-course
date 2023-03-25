@@ -98,3 +98,16 @@ Take a Photo:
 nvgstcapture-1.0 --orientation=2       # for testing CSI camera
 # V4L2 USB camera 
 nvgstcapture-1.0 --camsrc=0 --cap-dev-node=1
+
+sudo apt install libpython3.7-dev
+
+wget http://dlib.net/files/dlib-19.23.tar.bz2
+tar jxvf dlib-19.23.tar.bz2
+cd dlib-19.23/
+mkdir build
+cd build/
+cmake ..
+cmake --build .
+cd ../
+sudo python3 setup.py install
+sudo pip3 install face_recognition

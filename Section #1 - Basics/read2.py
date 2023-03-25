@@ -6,7 +6,8 @@ import cv2 as cv
 # vod = cv.VideoCapture('../Resources/Videos/dog.mp4')
 # Create the Camera instance for No rotation (flip=0) with size of 640 by 480
 # vod = nano.Camera(camera_type=1, device_id=0, width=640, height=480, fps=30)
-vod = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
+# vod = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
+vod = cv.VideoCapture(0)
 
 # ret, frame = vod.read()
 
