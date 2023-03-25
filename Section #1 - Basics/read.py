@@ -14,7 +14,8 @@ total_frames = 0
 
 # Reading Videos
 # capture = cv.VideoCapture('./Resources/Videos/dog.mp4')
-capture = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
+# capture = cv.VideoCapture('rtsp://admin:admin@192.168.36.224/user=admin_password=admin_channel=1_stream=0.sdp')
+capture = cv.VideoCapture(0)
 haar_cascade = cv.CascadeClassifier('./haar_face.xml')
 while True:
     isTrue, frame = capture.read()
